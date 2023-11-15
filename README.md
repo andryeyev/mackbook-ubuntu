@@ -1,7 +1,7 @@
 # mackbook-ubuntu
 
-### run script:
+### run script
 
 ```shell
-sudo bash https://raw.githubusercontent.com/andryeyev/mackbook-ubuntu/main/install.sh
+wget https://raw.githubusercontent.com/andryeyev/mackbook-ubuntu/main/install.sh | sudo bash ./install.s
 ```
