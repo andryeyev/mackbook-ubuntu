@@ -24,10 +24,7 @@ git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macboo
 ./install.cirrus.driver.sh
 
 ## battery life
-apt install indicator-cpufreq
-sed -i 's/^#HandleSuspendKey=.*$/HandleSuspendKey=suspend-then-hibernate/' /etc/systemd/sleep.conf
-sed -i 's/^#AllowSuspendThenHibernate=.*$/AllowSuspendThenHibernate=yes/' /etc/systemd/sleep.conf
-sed -i 's/^HibernateDelaySec=.*$/HybridSleepMode=3600/' /etc/systemd/sleep.conf
+# no solution :(
 
 ## touch bar
 # no solution :(
@@ -47,6 +44,14 @@ sed -i 's/^HibernateDelaySec=.*$/HybridSleepMode=3600/' /etc/systemd/sleep.conf
 # sudo echo "facetimehd" >> /etc/modules-load.d/facetimehd.conf
 
 ## end
+
+## extra
+
+# hibernate
+apt install pm-utils
+sed -i 's/^#HandleSuspendKey=.*$/HandleSuspendKey=suspend-then-hibernate/' /etc/systemd/sleep.conf
+sed -i 's/^#AllowSuspendThenHibernate=.*$/AllowSuspendThenHibernate=yes/'  /etc/systemd/sleep.conf
+sed -i 's/^HibernateDelaySec=.*$/HybridSleepMode=3600/'                    /etc/systemd/sleep.conf
 
 rm -rf /opt/mackbook
 
