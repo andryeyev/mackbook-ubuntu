@@ -23,6 +23,12 @@ apt install -y gcc linux-headers-generic patch
 git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
 ./install.cirrus.driver.sh
 
+## battery life
+apt install indicator-cpufreq
+sed -i 's/^#HandleSuspendKey=.*$/HandleSuspendKey=suspend-then-hibernate/' /etc/systemd/sleep.conf
+sed -i 's/^#AllowSuspendThenHibernate=.*$/AllowSuspendThenHibernate=yes/' /etc/systemd/sleep.conf
+sed -i 's/^HibernateDelaySec=.*$/HybridSleepMode=3600/' /etc/systemd/sleep.conf
+
 ## touch bar
 # no solution :(
 
