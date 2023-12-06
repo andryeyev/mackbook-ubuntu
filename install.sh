@@ -31,28 +31,13 @@ git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macboo
 
 ## webcam
 # no solution :(
-#
-# draft script:
-#
-# apt install -y cpio kmod libssl-dev checkinstall
-# git clone https://github.com/patjak/facetimehd-firmware.git && cd facetimehd-firmware
-# make
-# make install
-# cd ..
-# depmod
-# modprobe facetimehd
-# sudo echo "facetimehd" >> /etc/modules-load.d/facetimehd.conf
 
 ## end
+rm -rf /opt/mackbook
 
 ## extra
 
 # hibernate
-apt install pm-utils
-sed -i 's/^#HandleSuspendKey=.*$/HandleSuspendKey=suspend-then-hibernate/' /etc/systemd/sleep.conf
-sed -i 's/^#AllowSuspendThenHibernate=.*$/AllowSuspendThenHibernate=yes/'  /etc/systemd/sleep.conf
-sed -i 's/^HibernateDelaySec=.*$/HybridSleepMode=3600/'                    /etc/systemd/sleep.conf
-
-rm -rf /opt/mackbook
+# no solution :(
 
 reboot
